@@ -1,0 +1,16 @@
+correct but if i am removing the public from message then the code is giving below error
+/usercode/Main.java:5: error: getSalary() in Marketers cannot override getSalary() in Employee
+  int getSalary() {
+      ^
+  attempting to assign weaker access privileges; was public
+1 error
+ChatGPT
+
+
+
+
+The error occurs because when you override a method, you cannot reduce the visibility of the method. The getSalary method in the
+ Employee class is public, so the overridden method in the Marketers class must also be public.
+
+Similarly, when you define a new method like message in the Marketers class, it should ideally be public if you want it to be 
+accessible from outside the class, such as in the Main class.

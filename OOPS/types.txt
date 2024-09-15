@@ -1,0 +1,199 @@
+the main is to acess non static function we need to specify object but static can be acessed without specifying object
+
+we can initialize the datamember without constructor during the time of decleration , that variable will have same value for each object
+its similr not to static 
+
+this rule applies in both datamembers and functions for calling a non static function we need to call it by an object
+
+
+we can acess static paramember from non static function but not acess nonstatic from static function
+
+static function can acess static paramember
+
+if we make object inside static function and try to print its value using only obj. than that will reasult in stack overflow
+
+we can acess the non static datamembers from static function by specifying the object which is created inside the static function like obj.a
+but the function should be called frm main function.
+
+in codequotient its simple that we cant acess non static datamember without specyfing any object because its initialized but its different from static variable
+
+In Java, there are several types of inheritance. However, it’s important to note that Java does not support multiple inheritance
+directly through classes, but it does support it through interfaces. Here are the types of inheritance supported in Java:
+
+1. Single Inheritance
+A class inherits from a single superclass.
+
+public class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.display();  // Output: Class A
+        obj.show();     // Output: Class B
+    }
+}
+
+class A {
+    void display() {
+        System.out.println("Class A");
+    }
+}
+
+class B extends A {
+    void show() {
+        System.out.println("Class B");
+    }
+}
+
+2. Multilevel Inheritance
+A class is derived from another class, which is also derived from another class, forming a hierarchy.
+
+public class Main {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.display();  // Output: Class A
+        obj.show();     // Output: Class B
+        obj.print();    // Output: Class C
+    }
+}
+
+class A {
+    void display() {
+        System.out.println("Class A");
+    }
+}
+
+class B extends A {
+    void show() {
+        System.out.println("Class B");
+    }
+}
+
+class C extends B {
+    void print() {
+        System.out.println("Class C");
+    }
+}
+
+3. Hierarchical Inheritance
+Multiple classes inherit from a single superclass.
+
+public class Main {
+    public static void main(String[] args) {
+        B objB = new B();
+        C objC = new C();
+        
+        objB.display();  // Output: Class A
+        objB.show();     // Output: Class B
+        
+        objC.display();  // Output: Class A
+        objC.print();    // Output: Class C
+    }
+}
+
+class A {
+    void display() {
+        System.out.println("Class A");
+    }
+}
+
+class B extends A {
+    void show() {
+        System.out.println("Class B");
+    }
+}
+
+class C extends A {
+    void print() {
+        System.out.println("Class C");
+    }
+}
+
+4. Multiple Inheritance (Through Interfaces)
+A class can implement multiple interfaces.
+
+public class Main {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.display();  // Output: Interface A
+        obj.show();     // Output: Interface B
+    }
+}
+
+interface A {
+    void display();
+}
+
+interface B {
+    void show();
+}
+
+class C implements A, B {
+    public void display() {
+        System.out.println("Interface A");
+    }
+    
+    public void show() {
+        System.out.println("Interface B");
+    }
+}
+
+5. Hybrid Inheritance (Through Interfaces)
+Combination of two or more types of inheritance. Java supports hybrid inheritance through interfaces.
+
+public class Main {
+    public static void main(String[] args) {
+        D obj = new D();
+        obj.display();  // Output: Interface A
+        obj.show();     // Output: Interface B
+        obj.print();    // Output: Interface C
+    }
+}
+
+interface A {
+    void display();
+}
+
+interface B {
+    void show();
+}
+
+interface C extends A, B {
+    void print();
+}
+
+class D implements C {
+    public void display() {
+        System.out.println("Interface A");
+    }
+
+    public void show() {
+        System.out.println("Interface B");
+    }
+
+    public void print() {
+        System.out.println("Interface C");
+    }
+}
+
+Summary
+Java supports the following types of inheritance:
+1. Single Inheritance: A class inherits from one superclass.
+2. Multilevel Inheritance: A class is derived from a class, which is also derived from another class.
+3. Hierarchical Inheritance: Multiple classes inherit from a single superclass.
+4. Multiple Inheritance: Implemented through interfaces where a class can implement multiple interfaces.
+5. Hybrid Inheritance: A combination of two or more types of inheritance, supported through interfaces.
+
+These types of inheritance enable Java to model complex relationships between classes and promote code reuse and polymorphism.
+
+is hybrid inheritance allowed in java without interfaces
+
+No, hybrid inheritance is not directly supported in Java without using interfaces. Hybrid inheritance involves a combination of two
+ or more types of inheritance. In Java, hybrid inheritance can be achieved only through interfaces, due to the language's restriction 
+ on multiple inheritance with classes.
+
+Explanation
+Java Classes and Multiple Inheritance: Java does not support multiple inheritance through classes due to the "Diamond Problem," 
+where ambiguity arises from inheriting from multiple classes that have a common base class. This could lead to complex and ambiguous
+situations regarding which method or attribute to inherit.
+
+Using Interfaces for Hybrid Inheritance: Java allows a class to implement multiple interfaces. This allows a form of hybrid 
+inheritance where a class can inherit behaviors from multiple sources, which can be combined to achieve hybrid inheritance.

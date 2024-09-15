@@ -1,0 +1,146 @@
+### Integer to String Conversion Methods
+
+1. **`Integer.toString(int i)`**
+   - **Input**: `i = 123`
+   - **Function**: Converts an `int` to a `String`.
+   - **Output**: `"123"`
+   - **Example**:
+     ```java
+     int num = 123;
+     String str = Integer.toString(num); // "123"
+     ```
+
+2. **`Integer.toString(int i, int radix)`**
+   - **Input**: `i = 255`, `radix = 2`
+   - **Function**: Converts an `int` to a `String` using the specified radix (base).
+   - **Output**: `"11111111"` (binary representation)
+   - **Example**:
+     ```java
+     int num = 255;
+     String strBinary = Integer.toString(num, 2); // "11111111"
+     ```
+
+   - **Input**: `i = 255`, `radix = 16`
+   - **Function**: Converts an `int` to a `String` using the specified radix (base).
+   - **Output**: `"ff"` (hexadecimal representation)
+   - **Example**:
+     ```java
+     int num = 255;
+     String strHex = Integer.toString(num, 16); // "ff"
+     ```
+
+### Other Data Types to String Conversion Methods
+
+1. **`String.valueOf(boolean b)`**
+   - **Input**: `b = true`
+   - **Function**: Converts a `boolean` to a `String`.
+   - **Output**: `"true"`
+   - **Example**:
+     ```java
+     boolean flag = true;
+     String str = String.valueOf(flag); // "true"
+     ```
+
+2. **`String.valueOf(char c)`**
+   - **Input**: `c = 'A'`
+   - **Function**: Converts a `char` to a `String`.
+   - **Output**: `"A"`
+   - **Example**:
+     ```java
+     char ch = 'A';
+     String str = String.valueOf(ch); // "A"
+     ```
+
+3. **`String.valueOf(int i)`**
+   - **Input**: `i = 123`
+   - **Function**: Converts an `int` to a `String`.
+   - **Output**: `"123"`
+   - **Example**:
+     ```java
+     int num = 123;
+     String str = String.valueOf(num); // "123"
+     ```
+
+4. **`String.valueOf(long l)`**
+   - **Input**: `l = 123456789L`
+   - **Function**: Converts a `long` to a `String`.
+   - **Output**: `"123456789"`
+   - **Example**:
+     ```java
+     long num = 123456789L;
+     String str = String.valueOf(num); // "123456789"
+     ```
+
+5. **`String.valueOf(float f)`**
+   - **Input**: `f = 12.34f`
+   - **Function**: Converts a `float` to a `String`.
+   - **Output**: `"12.34"`
+   - **Example**:
+     ```java
+     float num = 12.34f;
+     String str = String.valueOf(num); // "12.34"
+     ```
+
+6. **`String.valueOf(double d)`**
+   - **Input**: `d = 12.3456789`
+   - **Function**: Converts a `double` to a `String`.
+   - **Output**: `"12.3456789"`
+   - **Example**:
+     ```java
+     double num = 12.3456789;
+     String str = String.valueOf(num); // "12.3456789"
+     ```
+
+7. **`String.valueOf(Object obj)`**
+   - **Input**: `obj = new Integer(123)`
+   - **Function**: Converts an `Object` to a `String`. If the object is `null`, the string `"null"` is returned.
+   - **Output**: `"123"`
+   - **Example**:
+     ```java
+     Object obj = new Integer(123);
+     String str = String.valueOf(obj); // "123"
+     ```
+
+### Other Useful Conversion Methods
+
+1. **`Double.toString(double d)`**
+   - **Input**: `d = 12.345`
+   - **Function**: Converts a `double` to a `String`.
+   - **Output**: `"12.345"`
+   - **Example**:
+     ```java
+     double num = 12.345;
+     String str = Double.toString(num); // "12.345"
+     ```
+
+2. **`Float.toString(float f)`**
+   - **Input**: `f = 12.34f`
+   - **Function**: Converts a `float` to a `String`.
+   - **Output**: `"12.34"`
+   - **Example**:
+     ```java
+     float num = 12.34f;
+     String str = Float.toString(num); // "12.34"
+     ```
+
+3. **`Long.toString(long l)`**
+   - **Input**: `l = 123456789L`
+   - **Function**: Converts a `long` to a `String`.
+   - **Output**: `"123456789"`
+   - **Example**:
+     ```java
+     long num = 123456789L;
+     String str = Long.toString(num); // "123456789"
+     ```
+
+4. **`Character.toString(char c)`**
+   - **Input**: `c = 'A'`
+   - **Function**: Converts a `char` to a `String`.
+   - **Output**: `"A"`
+   - **Example**:
+     ```java
+     char ch = 'A';
+     String str = Character.toString(ch); // "A"
+     ```
+
+This format provides a clear and concise explanation of each method, including its input, function, and output.

@@ -1,0 +1,79 @@
+if it have 2 functions and have to promote any 1 parameter then java will confuse and give error
+
+The differences in behavior between the two code snippets you provided are due to how Java resolves method overloads and the type promotions involved.
+
+Code Snippet 1
+java
+Copy code
+class Main {
+    public void m1(int i, float f) {
+        System.out.println("m1-if");
+    }
+
+    public void m1(float f, int i) {
+        System.out.println("m1-fi");
+    }
+
+    public static void main(String[] args) {
+        Main s = new Main();
+        s.m1(20, 20); // Error occurs here
+    }
+}
+Code Snippet 2
+java
+Copy code
+class Main {
+    public void m1(int i, float f) {
+        System.out.println("m1-if");
+    }
+
+    public void m1(float f, float i) {
+        System.out.println("m1-ff");
+    }
+
+    public static void main(String[] args) {
+        Main s = new Main();
+        s.m1(20, 20); // No error occurs here
+    }
+}
+Explanation of the Errors
+Code Snippet 1
+Method Signatures:
+
+You have two overloaded methods: m1(int i, float f) and m1(float f, int i).
+When you call s.m1(20, 20), both arguments are int.
+Ambiguity:
+
+Java can promote 20 (int) to float, which means s.m1(20, 20) could potentially match both overloaded methods:
+It could match m1(int i, float f) (promoting the second 20 to float).
+It could also match m1(float f, int i) (promoting the first 20 to float).
+Error: Since both methods are potential matches for the given arguments, Java raises a compilation error due to ambiguity.
+
+Code Snippet 2
+Method Signatures:
+
+Here, you have m1(int i, float f) and m1(float f, float i).
+Non-Ambiguous Match:
+
+When you call s.m1(20, 20), the first argument is int and the second is also int.
+The first method m1(int i, float f) can accept this call with the first 20 as i and promote the second 20 (int) to float without ambiguity.
+Successful Compilation: In this case, the method m1(int i, float f) is a clear match, and there is no ambiguity, so the code compiles and runs without errors.
+
+Summary
+In Snippet 1, there is ambiguity due to having both methods that can accept the same types after promotion, leading to a compilation error.
+In Snippet 2, the method signatures are such that there is a clear match for the call made, resulting in successful compilation.
+If you want to resolve the ambiguity in Snippet 1, you can modify the method calls to ensure that only one method is a valid match, for example, by using a float for one of the parameters:
+
+java
+Copy code
+s.m1(20, 20.0f); // This will call m1(int i, float f)
+Or you could use a cast:
+
+java
+Copy code
+s.m1((float) 20, 20); // This will call m1(float f, int i)
+
+
+
+
+

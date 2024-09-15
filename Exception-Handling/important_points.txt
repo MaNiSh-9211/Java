@@ -1,0 +1,31 @@
+the catch statement can be empty and that will give no error
+if
+5/-1 = -5
+-5/1 = -5
+-5/-1 =5
+
+Positive / Positive = Positive
+Positive / Negative = Negative
+Negative / Positive = Negative
+Negative / Negative = Positive
+
+
+Statements Before the Exception:
+
+In Java, a try block must be followed by either a catch block, a finally block, or both. You cannot have a try block on its own without at least
+ one of these two.
+
+Any statements before the line that causes the exception are executed normally. This includes any System.out.println statements or
+other operations.
+Exception-Triggering Line:
+
+When the exception is triggered (in this case, 1 / 0), the program immediately jumps to handle the exception.
+If there's no catch block to handle the exception, it moves directly to the finally block (if one is present).
+Statements After the Exception:
+
+Any statements after the line that causes the exception do not get executed because the control flow is interrupted by the exception.
+After executing the finally block, the method exits, and the exception propagates back to the caller (in this case, back to main()).
+Finally Block:
+
+The finally block is always executed, regardless of whether an exception was thrown or not. It ensures that any cleanup code
+ (like closing resources) runs even if an error occurs.

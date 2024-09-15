@@ -1,0 +1,66 @@
+4.2 Natural language processing
+The NLP is a method of computation for automated analysis and representation of human language, where distributed semantics represents the meaning of words and sentences using vectorized representations and stored in vector databases which handles multidimenshional databases. When we read words and sentences, our brain processes language and creates processing data which is cognitive like the EEG signals. Modern NLP models are the foundation of  Word embeddings. High-dimensional vectors in semantic space represent words, phrases, and sentences. These vectors are obtained by training large language models on large Datasets to encode contextual information. Each vector represents the meaning of a word. Evaluatinon and comparison of quality of different word embeddings is a known, majourly an open challenge. Traditionaly word embeddings are analysed using internal or external methods. [31]External evaluation is the process for analyzing the quality of the embeddings based on their performance on downstream NLP tasks, such as question answering or recognizing antitys. But we  can train and fine-tune embeddings for specific tasks. Machine translation is a critical element of NLP, which aims to build a reliable encoder-decoder system. A fully connected, feed-forward network cannot take advantage of the fact that similar features often appear at different points in the sequence of ECoG data. For example, the production of a particular phoneme usually has a similar signature at a specific electrode regardless of when it occurs. To efficiently learn such patterns, the network applies the same short-term filter at regular intervals along the entire input sequence. Using a stride greater than one sample effectively downsamples the resulting output sequence. The network learns a set of these filters, producing a set of filtered sequences downsampled to 16 Hz. A trained an RNN to encode each sentence length sequence of neural activity into an abstract representation, and then decode this representation verbatim into English sentences, and achieved a 3% average word error rate[32].
+
+
+
+
+31. Hollenstein N, De la Torre A, Langer N, et al. CogniVal: A framework for cognitive word embedding evaluation. arXiv preprint. 2019: arXiv: 1909.09001.
+
+Google Scholar
+32. Makin JG, Moses DA, Chang EF. Machine translation of cortical activity to text with an encoder-decoder framework. Nat Neurosci. 2020, 23(4): 575–582.
+
+
+3 Deep learning for EEG‐based BCI
+3.1 Overview
+Deep learning is a subpart of specific ML algorithms. Thsese algorithms can be used to learn the EEG patterns[19]. These algorithms refers to the deep Neural Networkss. The majour characteristic of the Deep Learning systems works by combining a large number of neurons in multiple combinations, which allow them to learn features highly related to the human cognitive level. The typical systems for Deep Learning include recurrent neural network (RNN), convolutional neural network (CNN), and generative adversarial network (GAN). For the EEG‐based BCI applications Deep Learning is widely used. It is helpfull to extract EEG features and after that combine with the existing Machine Learning technology to achieve a high leval of classification or regression task. In this section, spontaneous EEG‐based BCI applications with CNN system, the use of GAN and  the process and applications of RNN are discussed, also long short‐term memory (LSTM), and the combination of CNN and LSTM will bediscussed.
+
+3.2 Convolutional neural networks
+Convolutional neural network is a kind of feedforward Neural Networkss, In this  input information flows the EEG patterns through mainly three layers. A convolutional layer, pooling layer, and fully connected layer [20]. The convolutional layer convolves the tensor with the shape, and then pooling layer simplifies the necessary calculations to reduce the data dimension. Finally, the fully connected layer connects each neuron in the previous layer to a new layer for predicting or classifying the target goals. This system of DL with stacked layers aims to reduce the input data and capture unique spatial dependence of the EEG patterns.
+The significant progress of CNN in classification tasks is vital to the development of the BCI, such as improvement of EEG‐based fatigue assessment. For example, an EEG‐based system of the spatial‐temporal convolutional neural network was proposed [21]. The advance of this system extracts temporal dependencies. It combines with dense layers for spatial‐temporal EEG information process and classification, which achieved 97% accuracy in the classification of EEG driving fatigue levels. Another recent study [22] also assessed diverse fatigue levels in a visual EEG experiment. It proposed a system of multi‐scale CNN that uses a space‐time-frequency combined features extraction strategy to extract raw EEG signals from an inception structure.
+3.3 Recurrent neural networks and long short‐term memory
+The RNN, featuring with a temporal sequence to record the memory, can address human reasoning by forming a directed graph between neurons. However, the generic network of RNN could only look at the new dependencies to avoid retaining some long‐term information. A particular type of RNN, LSTM networks, was proposed to handle learning long‐term dependencies capability.
+The studies of the RNN or LSTM framework in EEG‐based BCIs increased substantially in the past years with findings proposing that the results of RNN or LSTM‐based methods outperform traditional ML. The reason is that they can extract hidden EEG feature representations, and RNN combined with CNN can optimize feature representations by the integration of both temporal and spatial information of EEG signals. The framework is helpful for motion identification, emotion recognition, and sleep staging assessment [23]. For example, Supratak et al. [24] investigated automatic sleep stage scoring by employing an LSTM bidirectional algorithm for transitional rules learning of hidden time‐series EEG features and CNN to extract time-invariable EEG features.
+3.4 Generative adversarial networks
+In some cases, the real‐world EEG data is limited, which could be vulnerability when we train some ML or DL models. To overcome this problem, the GAN, including two synchronously trained NNs, called “generator networks” and “discriminator networks”, was recently proposed primarily for data augmentation purposes. It claims GAN generates new samples to mimic real‐world data from implying generative models [25].
+For example, a novel GAN model [26] was recently proposed, which learned the statistical characteristics of the EEG and increased the size of datasets by generating synthesis samples to improve classification performance. Also, a new EEG‐based framework [27], named Conditional Wasserstein GAN, was proposed to enhance emotion recognition by generating high‐quality synthetic EEG data based using the SEED and DEAP datasets.
+
+
+
+
+19. LeCun Y, Ranzato M. Deep learning tutorial. In Tutorials in International Conference on Machine Learning (ICML13), Atlanta, USA, 2013.
+GO TO REFERENCE
+Google Scholar
+20. Cecotti H, Gräser A. Convolutional neural networks for P300 detection with application to brain–computer interfaces. IEEE Trans Pattern Anal Mach Intell. 2011, 33(3): 433–445.
+GO TO REFERENCE
+Crossref
+PubMed
+Google Scholar
+21. Gao ZK, Wang XM, Yang YX, et al. EEG-based spatio–temporal convolutional neural network for driver fatigue evaluation. IEEE Trans Neural Networks Learn Syst. 2019, 30(9): 2755–2763.
+GO TO REFERENCE
+Crossref
+PubMed
+Google Scholar
+22. Yue K, Wang DL. EEG-based 3D visual fatigue evaluation using CNN. Electronics. 2019, 8(11): 1208.
+GO TO REFERENCE
+Crossref
+Google Scholar
+23. Patnaik S, Moharkar L, Chaudhari A. Deep RNN learning for EEG based functional brain state inference. In 2017 International Conference on Advances in Computing, Communication and Control (ICAC3), Mumbai, India, 2017, pp 1–6.
+GO TO REFERENCE
+Crossref
+Google Scholar
+24. Supratak A, Dong H, Wu C, et al. DeepSleepNet: a model for automatic sleep stage scoring based on raw single-channel EEG. IEEE Trans Neural Syst Rehabil Eng. 2017, 25(11): 1998–2008.
+GO TO REFERENCE
+Crossref
+PubMed
+Google Scholar
+25. Hartmann KG, Schirrmeister RT, Ball T. EEG-GAN: Generative adversarial networks for EEG brain signals. arXiv preprint. 2018: arXiv: 1806.01875.
+GO TO REFERENCE
+Google Scholar
+26. Abdelfattah SM, Abdelrahman GM, Wang M. Augmenting the size of EEG datasets using generative adversarial networks. In 2018 International Joint Conference on Neural Networks (IJCNN), Rio de Janeiro, Brazil, 2018, pp 1–6.
+GO TO REFERENCE
+Crossref
+Google Scholar
+27. Luo Y, Lu BL. EEG data augmentation for emotion recognition using a conditional Wasserstein GAN. In 2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), Honolulu, USA, 2018, pp 2535–2538.
+GO TO REFERENCE
+Crossref
+Google Scholar

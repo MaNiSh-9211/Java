@@ -1,0 +1,48 @@
+In Java, strings are immutable, which means once a `String` object is created, its value cannot be changed. However, if you need a mutable sequence of characters, you can use the `StringBuilder` or `StringBuffer` classes, which provide mutable string functionalities.
+
+### Key Differences
+
+- **StringBuilder**: A mutable sequence of characters. It is faster than `StringBuffer` because it is not synchronized.
+- **StringBuffer**: Also a mutable sequence of characters, but it is synchronized, making it thread-safe. This synchronization comes with a performance cost compared to `StringBuilder`.
+
+### Methods Specific to StringBuilder and StringBuffer
+
+1. **append**
+   - **Purpose**: Appends data to the end of the current sequence.
+   - **Usage**: `append` can take various data types including `String`, `char`, `int`, `double`, etc.
+   - **Example**: `sb.append(" World");`
+
+2. **insert**
+   - **Purpose**: Inserts data at a specified position.
+   - **Usage**: `insert` can take a position index and data of various types.
+   - **Example**: `sb.insert(5, "Beautiful ");`
+
+3. **delete**
+   - **Purpose**: Removes characters between specified start and end indices.
+   - **Usage**: `delete` takes a start index and an end index.
+   - **Example**: `sb.delete(5, 16);`
+
+4. **replace**
+   - **Purpose**: Replaces characters in a substring with specified data.
+   - **Usage**: `replace` takes start and end indices along with the replacement data.
+   - **Example**: `sb.replace(0, 5, "Hi");`
+
+5. **reverse**
+   - **Purpose**: Reverses the sequence of characters.
+   - **Usage**: `reverse` does not take any arguments and modifies the sequence in place.
+   - **Example**: `sb.reverse();`
+
+6. **toString**
+   - **Purpose**: Converts the `StringBuilder` or `StringBuffer` to a `String`.
+   - **Usage**: `toString` converts the mutable sequence to an immutable `String`.
+   - **Example**: `sb.toString();`
+
+### Functions not Available in String
+
+The following methods are not available in the `String` class, which is immutable:
+
+- **append**: `String` does not have an `append` method.
+- **insert**: `String` does not support inserting characters at specific positions.
+- **delete**: `String` does not allow deletion of characters at specific positions.
+- **replace**: While `String` does have a `replace` method, it operates on the entire string, not on substrings based on indices.
+- **reverse**: `String` does not provide a direct method for reversing the sequence of characters.

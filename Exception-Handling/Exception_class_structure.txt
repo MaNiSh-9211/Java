@@ -1,0 +1,60 @@
+Throwable
+│
+├── Error
+│   ├── LinkageError
+│   │   ├── ClassNotFoundError
+│   │   ├── NoClassDefFoundError
+│   │   └── UnsatisfiedLinkError
+│   ├── VirtualMachineError
+│   │   ├── OutOfMemoryError
+│   │   ├── StackOverflowError
+│   │   └── InternalError
+│   ├── AssertionError
+│   └── ExceptionInInitializerError
+│
+└── Exception
+    ├── RuntimeException
+    │   ├── ArithmeticException
+    │   ├── NullPointerException
+    │   ├── IndexOutOfBoundsException
+    │   │   ├── ArrayIndexOutOfBoundsException
+    │   │   └── StringIndexOutOfBoundsException
+    │   ├── ClassCastException
+    │   ├── IllegalArgumentException
+    │   │   └── NumberFormatException
+    │   ├── IllegalStateException
+    │   ├── UnsupportedOperationException
+    │   ├── ConcurrentModificationException
+    │   ├── NoSuchElementException
+    │   ├── SecurityException
+    │   └── InputMismatchException
+    │
+    ├── IOException
+    │   ├── FileNotFoundException
+    │   ├── EOFException
+    │   └── SocketException
+    │
+    ├── SQLException
+    ├── InterruptedException
+    ├── ClassNotFoundException
+    ├── CloneNotSupportedException
+    ├── InstantiationException
+    ├── IllegalAccessException
+    ├── InvocationTargetException
+    └── MalformedURLException
+
+
+Explanation:
+Throwable: The top-level superclass for all errors and exceptions in Java. It has two main subclasses: Error and Exception.
+
+Error: Represents serious problems that a reasonable application should not try to catch. Examples include OutOfMemoryError and
+StackOverflowError.
+
+Exception: Represents conditions that a reasonable application might want to catch. This class has many subclasses, most notably
+RuntimeException and IOException.
+
+RuntimeException: A subclass of Exception that represents exceptions that can occur during the normal operation of the Java Virtual
+Machine. These exceptions do not need to be declared in a method's throws clause if they can be thrown by the execution of the method 
+and propagated outside the method or constructor.
+
+IOException: A subclass of Exception that represents input/output-related exceptions, like file handling errors.

@@ -1,0 +1,127 @@
+### Array Methods in Java (java.util.Arrays)
+
+1. **`binarySearch(int[] array, int key)`**
+   - **Input**: `int[] array` (sorted array), `int key` (value to search for)
+   - **Function**: Searches for the specified key in the sorted array using binary search.
+   - **Output**: Index of the key if found, otherwise a negative value indicating the insertion point.
+
+2. **`binarySearch(Object[] array, Object key)`**
+   - **Input**: `Object[] array` (sorted array), `Object key` (value to search for)
+   - **Function**: Searches for the specified key in the sorted array using binary search.
+   - **Output**: Index of the key if found, otherwise a negative value indicating the insertion point.
+
+3. **`copyOf(int[] original, int newLength)`**
+   - **Input**: `int[] original` (array to copy), `int newLength` (length of new array)
+   - **Function**: Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
+   - **Output**: New array with the specified length.
+
+4. **`copyOfRange(int[] original, int from, int to)`**
+   - **Input**: `int[] original` (array to copy), `int from` (starting index, inclusive), `int to` (ending index, exclusive)
+   - **Function**: Copies the specified range of the specified array into a new array.
+   - **Output**: New array containing the specified range of elements.
+
+5. **`copyOfRange(Object[] original, int from, int to)`**
+   - **Input**: `Object[] original` (array to copy), `int from` (starting index, inclusive), `int to` (ending index, exclusive)
+   - **Function**: Copies the specified range of the specified array into a new array.
+   - **Output**: New array containing the specified range of elements.
+
+6. **`fill(int[] array, int value)`**
+   - **Input**: `int[] array` (array to fill), `int value` (value to set)
+   - **Function**: Assigns the specified value to each element of the specified array.
+   - **Output**: None (modifies the array in place).
+
+7. **`fill(int[] array, int fromIndex, int toIndex, int value)`**
+   - **Input**: `int[] array` (array to fill), `int fromIndex` (starting index, inclusive), `int toIndex` (ending index, exclusive), `int value` (value to set)
+   - **Function**: Assigns the specified value to each element of the specified range of the array.
+   - **Output**: None (modifies the array in place).
+
+8. **`fill(Object[] array, Object value)`**
+   - **Input**: `Object[] array` (array to fill), `Object value` (value to set)
+   - **Function**: Assigns the specified value to each element of the specified array.
+   - **Output**: None (modifies the array in place).
+
+9. **`fill(Object[] array, int fromIndex, int toIndex, Object value)`**
+   - **Input**: `Object[] array` (array to fill), `int fromIndex` (starting index, inclusive), `int toIndex` (ending index, exclusive), `Object value` (value to set)
+   - **Function**: Assigns the specified value to each element of the specified range of the array.
+   - **Output**: None (modifies the array in place).
+
+10. **`getLength(Object array)`**
+    - **Input**: `Object array` (array whose length is to be determined)
+    - **Function**: Returns the length of the specified array.
+    - **Output**: `int` length of the array.
+
+11. **`equals(int[] a, int[] b)`**
+    - **Input**: `int[] a` (first array), `int[] b` (second array)
+    - **Function**: Returns true if the two specified arrays are equal to one another.
+    - **Output**: `boolean` true if arrays are equal, false otherwise.
+
+12. **`equals(Object[] a, Object[] b)`**
+    - **Input**: `Object[] a` (first array), `Object[] b` (second array)
+    - **Function**: Returns true if the two specified arrays are equal to one another.
+    - **Output**: `boolean` true if arrays are equal, false otherwise.
+
+13. **`hashCode(int[] array)`**
+    - **Input**: `int[] array` (array for which hash code is to be computed)
+    - **Function**: Returns a hash code for the specified array.
+    - **Output**: `int` hash code of the array.
+
+14. **`hashCode(Object[] array)`**
+    - **Input**: `Object[] array` (array for which hash code is to be computed)
+    - **Function**: Returns a hash code for the specified array.
+    - **Output**: `int` hash code of the array.
+
+15. **`toString(int[] array)`**
+    - **Input**: `int[] array` (array to convert to string)
+    - **Function**: Returns a string representation of the contents of the specified array.
+    - **Output**: `String` representation of the array.
+
+16. **`toString(Object[] array)`**
+    - **Input**: `Object[] array` (array to convert to string)
+    - **Function**: Returns a string representation of the contents of the specified array.
+    - **Output**: `String` representation of the array.
+
+17. **`asList(T... a)`**
+    - **Input**: `T... a` (varargs array of elements)
+    - **Function**: Returns a fixed-size list backed by the specified array.
+    - **Output**: `List<T>` backed by the specified array.
+
+18. **`sort(int[] array)`**
+    - **Input**: `int[] array` (array to be sorted)
+    - **Function**: Sorts the specified array into ascending numerical order.
+    - **Output**: None (modifies the array in place).
+
+19. **`sort(int[] array, int fromIndex, int toIndex)`**
+    - **Input**: `int[] array` (array to be sorted), `int fromIndex` (starting index, inclusive), `int toIndex` (ending index, exclusive)
+    - **Function**: Sorts the specified range of the array into ascending numerical order.
+    - **Output**: None (modifies the array in place).
+
+20. **`sort(Object[] array)`**
+    - **Input**: `Object[] array` (array to be sorted)
+    - **Function**: Sorts the specified array of objects into ascending order, according to the natural ordering of its elements.
+    - **Output**: None (modifies the array in place).
+
+21. **`sort(Object[] array, Comparator<? super T> c)`**
+    - **Input**: `Object[] array` (array to be sorted), `Comparator<? super T> c` (comparator for ordering)
+    - **Function**: Sorts the specified array of objects according to the order induced by the specified comparator.
+    - **Output**: None (modifies the array in place).
+
+22. **`stream(int[] array)`**
+    - **Input**: `int[] array` (array to be converted to stream)
+    - **Function**: Returns a sequential stream with the specified array as its source.
+    - **Output**: `IntStream` with the specified array as its source.
+
+23. **`stream(Object[] array)`**
+    - **Input**: `Object[] array` (array to be converted to stream)
+    - **Function**: Returns a sequential stream with the specified array as its source.
+    - **Output**: `Stream<T>` with the specified array as its source.
+
+24. **`parallelStream(int[] array)`**
+    - **Input**: `int[] array` (array to be converted to parallel stream)
+    - **Function**: Returns a possibly parallel stream with the specified array as its source.
+    - **Output**: `IntStream` with the specified array as its source.
+
+25. **`parallelStream(Object[] array)`**
+    - **Input**: `Object[] array` (array to be converted to parallel stream)
+    - **Function**: Returns a possibly parallel stream with the specified array as its source.
+    - **Output**: `Stream<T>` with the specified array as its source.
+

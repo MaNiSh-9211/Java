@@ -1,0 +1,51 @@
+                           I. Data Structures
+
+1. Arrays
+2. Linked Lists
+3. Stacks
+4. Queues
+5. Maps & Hash Tables
+6. Graphs
+7. Trees
+8. Binary Trees & Binary Search Trees
+9. Self-balancing Trees (AVL Trees, Red-Black Trees, Splay Trees)
+10. Heaps
+11. Tries
+12. Segment Trees
+13. Fenwick Trees
+14. Disjoint Set Union
+15. Minimum Spanning Trees
+
+
+                            II. Algorithms
+
+
+1. Divide and Conquer
+2. Sorting Algorithms
+   2.1. Bubble Sort
+   2.2. Counting Sort
+   2.3. Quick Sort
+   2.4. Merge Sort
+   2.5. Radix Sort
+3. Searching Algorithms
+   3.1. Linear Search
+   3.2. Binary Search
+4. Sieve of Eratosthenes
+5. Knuth-Morris-Pratt Algorithm
+6. Greedy I
+   6.1. Maximum number of non-overlapping intervals on an axis
+7. Greedy II
+   7.1. Fractional Knapsack Problem
+8. Dynamic Programming I
+   8.1. 0–1 Knapsack Problem
+9. Dynamic Programming II
+   9.1. Longest Common Subsequence
+10. Dynamic Programming III
+    10.1. Longest Increasing Subsequence
+11. Convex Hull
+12. Graph Traversals
+    12.1. Breadth-First Search
+    12.2. Depth-First Search
+13. Floyd-Warshall / Roy-Floyd Algorithm
+14. Dijkstra's Algorithm & Bellman-Ford Algorithm
+15. Topological Sorting

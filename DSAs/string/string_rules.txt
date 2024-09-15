@@ -1,0 +1,36 @@
+> Strong are non premetive datatype
+> If the string inside print satement is not present in the string pool then java will create a new string
+> both created using new and String keyword
+> Remember strings are immutable so every library function creates a new string.
+> we can declare strings in java using 2 ways.
+
+1 using normal string literal("") 
+e.g String str="manish;
+
+2 By creating a new object of String class
+e.g String str=new String("Manish");
+
+> Difference between both method
+1 Strings created Using String keyword are stored inside String constant pool in the heap area.
+1 String created using new keyword are stored in heap area but outside string pool.
+
+2 If we create a new string with the same value then the refrence variable is pointed to the same value that is allready present in the
+  string pool.
+2 new object is created in the heap area inside the heap area even if there exist same value in heap or in the string pool.
+
+3 In case of String keyword the refrence variable is the name of variable.
+3 in cas eof new keyword the refrence variable is the object name which is pointing to the adress of a block in the heap.
+
+every king of refrences are stored in the stack area of teh ram.
+
+COMPARISON OF Strings
+
+As strings are non premitive datatypes..
+1 string keyword: when we use == operator in the non premetive datatypes line String str1=" or  String str2 new String(), then in these 
+cases the compiller compare only the refrences of the variables or objects. if the refrences are pointing to the same memory location in
+the heap then the string are considerd equal else they are not equal; 
+1 new keyword: 
+
+
+
+

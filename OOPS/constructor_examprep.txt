@@ -1,0 +1,68 @@
+The code is giving an error because the Parent class does not have a default (no-argument) constructor, and the Child class's 
+default constructor does not explicitly call any of the Parent class's constructors. In Java, if you do not explicitly call a superclass constructor in the child class constructor,
+ the compiler automatically tries to call the superclass's default constructor (super()), which does not exist in this case.
+
+
+ Rules for Constructors in Java
+Constructor Naming:
+
+The constructor name must match the class name.
+No Return Type:
+
+Constructors do not have a return type, not even void.
+Default Constructor:
+
+If no constructor is defined in a class, the Java compiler automatically provides a default constructor with no parameters.
+If a class has any constructors defined, the default constructor will not be provided unless explicitly defined.
+Constructor Overloading:
+
+A class can have multiple constructors with different parameter lists (overloading).
+Calling Parent Class Constructor:
+
+When a child class object is created, the parent class constructor is called first.
+If the parent class has a default constructor, it is called implicitly unless specified otherwise.
+If the parent class does not have a default constructor, the child class constructor must explicitly call one of the parent class's
+ constructors using super(), passing the required parameters.
+
+Super Call:
+
+The super() call must be the first statement in the child class constructor.
+If no explicit super() call is provided in the child class constructor, the compiler inserts a call to the parent class's default 
+constructor. If no default constructor exists, a compilation error occurs.
+
+Constructor Chaining:
+
+A constructor can call another constructor in the same class using this(). This is also known as constructor chaining.
+When calling another constructor, this() must be the first statement in the constructor.
+Instance Initialization:
+
+Instance variables of a class are initialized before the constructor body is executed.
+Constructors are used to initialize instance variables.
+Access Modifiers:
+
+Constructors can have access modifiers (public, protected, private). This controls the visibility and accessibility of the constructor.
+Static Context:
+
+Constructors cannot be static. They are always associated with an instance of the class.
+Anonymous Classes:
+When creating an anonymous class, you can override the constructor but not call the superclass constructor explicitly.
+Abstract Classes:
+If a class is abstract and contains a constructor, you cannot instantiate it directly, but its constructors can be called when subclassing.
+Final Classes:
+A final class cannot be subclassed. However, if it has a constructor, it can still be used to create instances.
+Summary of Scenarios
+Child Class Without Default Constructor:
+
+If the child class has only parameterized constructors and does not explicitly call a parent class constructor, it will compile
+ without errors as long as you only create instances using those parameterized constructors.
+
+Child Class With Default Constructor:
+
+If the child class has a default constructor that does not call a parent class constructor and the parent does not have a default
+ constructor, it will lead to a compilation error.
+
+Multiple Constructors:
+
+A class can define multiple constructors with different signatures (overloading) to provide different ways to create instances of the class.
+These rules are essential for understanding how constructors work in Java, especially in the context of inheritance and class design.
+ They help ensure proper initialization of objects and the relationships between classes.

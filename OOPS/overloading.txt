@@ -1,0 +1,124 @@
+Function overloading in Java is a feature that allows a class to have more than one method with the same name,
+provided their parameter lists are different. It’s a way of implementing polymorphism at compile-time. Below are the 
+different types of method overloading in Java:
+
+1. Different Number of Parameters
+This is the most common type of method overloading where methods have the same name but different numbers of parameters.
+
+public class OverloadExample {
+    void display() {
+        System.out.println("No parameters");
+    }
+
+    void display(int a) {
+        System.out.println("One parameter: " + a);
+    }
+
+    void display(int a, int b) {
+        System.out.println("Two parameters: " + a + ", " + b);
+    }
+
+    public static void main(String[] args) {
+        OverloadExample obj = new OverloadExample();
+        obj.display();
+        obj.display(1);
+        obj.display(1, 2);
+    }
+}
+
+2. Different Types of Parameters
+Methods can have the same name and the same number of parameters, but the parameters must be of different types.
+
+public class OverloadExample {
+    void display(int a) {
+        System.out.println("Parameter type: int, value: " + a);
+    }
+
+    void display(double a) {
+        System.out.println("Parameter type: double, value: " + a);
+    }
+
+    void display(String a) {
+        System.out.println("Parameter type: String, value: " + a);
+    }
+
+    public static void main(String[] args) {
+        OverloadExample obj = new OverloadExample();
+        obj.display(5);
+        obj.display(5.5);
+        obj.display("Hello");
+    }
+}
+
+3. Different Sequence of Parameters
+Methods can also be overloaded by changing the sequence of parameters.
+
+public class OverloadExample {
+    void display(int a, double b) {
+        System.out.println("Parameters: int, double -> " + a + ", " + b);
+    }
+
+    void display(double a, int b) {
+        System.out.println("Parameters: double, int -> " + a + ", " + b);
+    }
+
+    public static void main(String[] args) {
+        OverloadExample obj = new OverloadExample();
+        obj.display(1, 2.5);
+        obj.display(2.5, 1);
+    }
+}
+
+4. Different Number of Parameters with Varargs
+Java also supports variable-length arguments (varargs) which allows a method to accept zero or more arguments. 
+This can be combined with method overloading.
+
+public class OverloadExample {
+    void display(int a) {
+        System.out.println("One parameter: " + a);
+    }
+
+    void display(int... a) {
+        System.out.print("Varargs parameter: ");
+        for (int i : a) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        OverloadExample obj = new OverloadExample();
+        obj.display(1);
+        obj.display(1, 2, 3, 4);
+    }
+}
+
+5. Overloading Static Methods
+Static methods can also be overloaded in the same way as instance methods.
+
+public class OverloadExample {
+    static void display(int a) {
+        System.out.println("Static method, int parameter: " + a);
+    }
+
+    static void display(String a) {
+        System.out.println("Static method, String parameter: " + a);
+    }
+
+    public static void main(String[] args) {
+        OverloadExample.display(1);
+        OverloadExample.display("Hello");
+    }
+}
+
+Summary
+In summary, method overloading in Java can be achieved through:
+
+1. Different number of parameters.
+2. Different types of parameters.
+3. Different sequence of parameters.
+4. Combination with varargs.
+5. Overloading static methods.
+
+Method overloading allows methods to perform similar functions with different inputs and helps improve code readability 
+and reusability.

@@ -1,0 +1,84 @@
+Abstraction is a techinique used to force the subclasses to implement some features e.g the aeroplanes must have flying method and
+the boad must have swiming method .
+so in this case we can make an abstract class with fuctions, and the child classes must have to implement those all abstracted method 
+present in the abstraction class
+
+Like this way it force the classes to implement some features
+
+We implement abstraction using the abstract keyword (abstract class className)
+
+Both the class and the methods can use the abstract keyword
+
+We cant make the object of abstract class to acess or use abstracted function we have to make object of child class
+
+The abstract class can have non abstract methods (normal function with initilization called cmplete methods)
+
+It is not necessary to use those non abstracted methods in the child class
+
+We can override the non abstracted methods(both child and parent classes have method with same name)
+
+We can make abstract subclass of an abstarcted class so the also dont have any need to use the methods of parent abstract class
+
+If we have any abstract methd in our class then the class must be abstract either it will give error
+
+Public fields do not provide abstraction; they break encapsulation by exposing the internal state directly.
+
+
+
+// Abstract class
+abstract class Animal {
+    // Abstract method (does not have a body)
+    abstract void makeSound();
+
+    // Regular method
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+// Subclass (inheriting from Animal)
+class Dog extends Animal {
+    // Implementing the abstract method
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+// Subclass (inheriting from Animal)
+class Cat extends Animal {
+    // Implementing the abstract method
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+// Main class
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Animal myDog = new Dog(); // Create a Dog object
+        Animal myCat = new Cat(); // Create a Cat object
+
+        myDog.makeSound(); // Outputs: Bark
+        myDog.sleep();     // Outputs: Sleeping...
+
+        myCat.makeSound(); // Outputs: Meow
+        myCat.sleep();     // Outputs: Sleeping...
+    }
+}
+
+
+
+
+
+
+Interfaces
+
+similar to abstraction but interfaces allows multiple inheritance
+
+
+They are implemented using "interface" keyword
+
+There is no need of specifying interface keyword in interface functions like abstract function
+
+
+In case of extend we use implements

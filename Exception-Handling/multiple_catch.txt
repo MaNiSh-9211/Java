@@ -1,0 +1,166 @@
+Rules for Using Multiple `catch` Statements in Java
+
+
+Summary of Rules
+1  Order Matters: Place more specific exceptions before more general ones if we catch Exception first and then arithematic then it
+ will give error.
+2  No Duplicates: You cannot catch the same exception type more than once either it will give error in case of multiple catch blocks.
+3  Use Multi-Catch (Java 7+): You can handle multiple exception types in one catch block using the | operator if we want to handle different 
+kind of exception insame way.
+4  Re-throwing: You can re-throw exceptions from a catch block if needed.
+
+5 After the Exception: Any code after the line that throws the exception is not executed unless it's inside a finally block or the method's
+ execution is continued from a catch block. so after exception occur only catch block and final block will exicute.
+
+ 6 } catch (FileNotFoundException e1 | NumberFormatException e2) {
+            System.out.println("An error occurred: " + e1.getMessage()+e1.getMessage());
+}
+ChatGPT said:
+In Java, you cannot use different variable names for exceptions when using the pipe (|) operator. Instead, you must use a single variable name to 
+refer to the caught exception. If you try to use different variable names as shown in your example, it will result in a compilation error
+
+1. **Order of `catch` Blocks:**
+   - The order of `catch` blocks matters. Catch blocks must be ordered from the most specific exception to the most general. This is because Java will match exceptions against the `catch` blocks in the order they appear. If a more general exception (like `Exception`) is placed before a more specific one (like `FileNotFoundException`), the specific one will never be reached.
+   - Example of incorrect order (causes compilation error):
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (Exception e) {
+         // General exception handler
+     } catch (FileNotFoundException e) {
+         // This code will never be reached because Exception is a superclass
+     }
+     ```
+   - Correct order:
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (FileNotFoundException e) {
+         // Specific exception handler
+     } catch (Exception e) {
+         // General exception handler
+     }
+     ```
+
+2. **No Duplicate Exception Types:**
+   - Each `catch` block must handle a unique type of exception. You cannot have two `catch` blocks that handle the same exception type.
+   - Example of incorrect usage:
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (IOException e) {
+         // Handle IOException
+     } catch (IOException e) {
+         // Compilation error: duplicate catch block for IOException
+     }
+     ```
+
+3. **Multi-Catch Blocks (Java 7 and later):**
+   - Starting with Java 7, you can catch multiple exception types in a single `catch` block using a pipe (`|`) symbol. This helps reduce code duplication when you want to handle multiple exceptions in the same way.
+   - Example:
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (IOException | SQLException e) {
+         // Handle both IOException and SQLException the same way
+         e.printStackTrace();
+     }
+     ```
+   - Note: When using multi-catch blocks, the exception variable (`e` in the example) is effectively `final`, meaning you cannot assign a new value to it within the `catch` block.
+
+4. **Catch Blocks with Superclasses:**
+   - If a `catch` block handles a superclass of several exceptions, it will catch any exceptions of that type or its subclasses. However, this can obscure which specific exception was thrown, so it's generally better to be specific when possible.
+   - Example:
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (Exception e) {
+         // This will catch any exception that is a subclass of Exception, including IOException, NullPointerException, etc.
+     }
+     ```
+
+5. **Re-throwing Exceptions:**
+   - You can re-throw an exception from a `catch` block if you want to handle it at a higher level or log it before passing it up the chain.
+   - Example:
+     ```java
+     try {
+         // Some code that may throw exceptions
+     } catch (IOException e) {
+         System.err.println("Caught IOException: " + e.getMessage());
+         throw e; // Re-throwing the exception
+     }
+     ```
+
+### Example with Multiple `catch` Blocks
+
+Here’s a practical example demonstrating the use of multiple `catch` blocks:
+
+```java
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class MultipleCatchExample {
+
+    public static void main(String[] args) {
+        try {
+            File file = new File("test.txt");
+            FileInputStream fis = new FileInputStream(file);
+
+            int data = fis.read(); // This could throw IOException
+            System.out.println("Data read from file: " + data);
+
+        } catch (FileNotFoundException e) {
+            // This block handles FileNotFoundException
+            System.err.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            // This block handles other IOExceptions
+            System.err.println("IO error occurred: " + e.getMessage());
+        } catch (Exception e) {
+            // This block handles any other exceptions
+            System.err.println("An unexpected error occurred: " + e.getMessage());
+        }
+    }
+}
+
+
+In Java, when using a multi-catch block to handle multiple exception types, the exception variable (e.g., e in the example)
+ is implicitly final. This means that within the catch block, you cannot reassign the exception variable to a new value. The idea is
+ to prevent you from accidentally losing the reference to the caught exception, ensuring that you can still access the original
+ exception object throughout the block.
+
+Here’s an example to illustrate this:
+
+Example without Multi-Catch Block
+java
+Copy code
+try {
+    // Some code that may throw exceptions
+} catch (IOException e) {
+    e = new IOException("New IOException"); // This is allowed
+    System.err.println(e.getMessage());
+} catch (SQLException e) {
+    e = new SQLException("New SQLException"); // This is allowed
+    System.err.println(e.getMessage());
+}
+In the code above, since each catch block handles only one type of exception, you are allowed to reassign the exception variable e within the block.
+
+Example with Multi-Catch Block
+java
+Copy code
+try {
+    // Some code that may throw exceptions
+} catch (IOException | SQLException e) {
+    // e = new Exception("New Exception"); // This would cause a compilation error
+    System.err.println(e.getMessage());
+}
+Explanation
+Reassigning Not Allowed: In the multi-catch block example, if you try to reassign e to a new Exception or any other value, it will 
+cause a compilation error. This is because the exception variable e is implicitly final in a multi-catch block. The compiler enforces
+ this to ensure that the original exception object remains accessible throughout the block.
+
+Why final: Making the exception variable final ensures that you don’t accidentally lose the reference to the original exception.
+ This is important because in many cases, you might want to log the exception, re-throw it, or otherwise handle the specific details of 
+ the caught exception. If you were allowed to reassign it, you might accidentally overwrite the reference, losing the context of the 
+ original error.

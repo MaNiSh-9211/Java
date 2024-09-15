@@ -1,0 +1,28 @@
+Explanation of HashMap
+
+--HashMap is a part of Java's java.util package and implements the Map interface. It provides a way to store key-value pairs with
+fast access, insertion, and deletion operations.
+
+
+---How It Works:
+
+--Hashing: HashMap uses hashing to store and retrieve data. It computes a hash code for each key and uses this code to determine 
+the bucket where the entry should be placed. If multiple keys hash to the same bucket, they are stored in a linked list 
+(or a balanced tree in Java 8 and later).
+
+--Buckets: The internal array of HashMap is divided into buckets. Each bucket holds a list of entries that have the same hash code.
+Handling Collisions: When multiple keys hash to the same bucket, HashMap uses linked lists (or trees for high collision buckets)
+to manage collisions.
+
+
+---Benefits:
+
+Fast Performance: Provides average time complexity of O(1) for insertions, deletions, and lookups.
+Dynamic Sizing: Automatically resizes the internal array as needed when the number of entries exceeds a certain threshold.
+Flexibility: Keys and values can be null (though only one null key is allowed).
+
+
+---Applications:
+
+Websites: Used for caching data (e.g., session storage, user preferences) where quick lookups are essential.
+Apps: Helps in storing and managing configurations, user data, and other key-value pair information efficiently.

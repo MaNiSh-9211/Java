@@ -1,0 +1,92 @@
+### List of Data Structures in Java
+
+1. **ArrayList**
+   - **Description**: A resizable array implementation of the List interface. Provides fast random access and is suitable for most operations.
+   - **Use Cases**: Storing lists of items where the size can change dynamically.
+
+2. **LinkedList**
+   - **Description**: Doubly-linked list implementation of the List and Deque interfaces. Provides efficient insertion and deletion.
+   - **Use Cases**: Implementing queues and stacks, where frequent insertions and deletions occur.
+
+3. **HashMap**
+   - **Description**: A hash table-based implementation of the Map interface. It allows for efficient key-value pair storage and retrieval.
+   - **Use Cases**: When fast lookups and insertions are needed with unique keys.
+
+4. **TreeMap**
+   - **Description**: A Red-Black tree-based implementation of the Map interface. It provides sorted order of keys.
+   - **Use Cases**: When sorted key-value pairs are required.
+
+5. **HashSet**
+   - **Description**: A hash table-based implementation of the Set interface. It does not allow duplicate elements.
+   - **Use Cases**: Storing unique elements with fast lookup, insertion, and deletion.
+
+6. **TreeSet**
+   - **Description**: A NavigableSet implementation based on a Red-Black tree. It provides sorted order of elements.
+   - **Use Cases**: When unique elements are needed in a sorted order.
+
+7. **PriorityQueue**
+   - **Description**: A priority queue implementation of the Queue interface. Elements are ordered based on their priority.
+   - **Use Cases**: Scheduling tasks, implementing algorithms like Dijkstra’s.
+
+8. **LinkedHashMap**
+   - **Description**: A hash table and linked list-based implementation of the Map interface. Maintains insertion order.
+   - **Use Cases**: When you need to maintain the order of entries.
+
+9. **ConcurrentHashMap**
+   - **Description**: A thread-safe implementation of the Map interface, allowing concurrent access and updates.
+   - **Use Cases**: When multiple threads access and modify the map simultaneously.
+
+10. **LinkedBlockingQueue**
+    - **Description**: A thread-safe blocking queue backed by linked nodes.
+    - **Use Cases**: Producer-consumer scenarios where thread safety is important.
+
+11. **ArrayDeque**
+    - **Description**: A resizable array implementation of the Deque interface. Provides efficient insertion and deletion at both ends.
+    - **Use Cases**: Implementing double-ended queues (deque) with better performance than LinkedList.
+
+12. **Stack**
+    - **Description**: A legacy class that represents a last-in, first-out (LIFO) stack of objects.
+    - **Use Cases**: Implementing stack-based algorithms and data structures.
+
+13. **Vector**
+    - **Description**: A synchronized, resizable array implementation of the List interface.
+    - **Use Cases**: Legacy use cases where thread-safe operations on a list are required.
+
+14. **Hashtable**
+    - **Description**: A synchronized implementation of the Map interface, similar to HashMap but thread-safe.
+    - **Use Cases**: Legacy use cases where thread safety and synchronized operations on a map are required.
+
+15. **WeakHashMap**
+    - **Description**: A hash table-based implementation of the Map interface with weak references to keys.
+    - **Use Cases**: Implementing caches where entries can be collected by garbage collection.
+
+16. **IdentityHashMap**
+    - **Description**: A hash table-based implementation of the Map interface that uses reference equality.
+    - **Use Cases**: When you need a map based on reference equality rather than object equality.
+
+17. **EnumSet**
+    - **Description**: A specialized Set implementation for use with enum types.
+    - **Use Cases**: Efficient storage and manipulation of enum values.
+
+18. **EnumMap**
+    - **Description**: A specialized Map implementation for use with enum keys.
+    - **Use Cases**: Efficient storage and manipulation of enum keys.
+
+19. **ConcurrentSkipListMap**
+    - **Description**: A concurrent NavigableMap implementation based on a skip list.
+    - **Use Cases**: When a sorted, thread-safe map is needed.
+
+20. **ConcurrentSkipListSet**
+    - **Description**: A concurrent NavigableSet implementation based on a skip list.
+    - **Use Cases**: When a sorted, thread-safe set is needed.
+
+21. **Trie (Prefix Tree)**
+    - **Description**: A tree-like data structure used to store a dynamic set of strings where keys are usually strings. Each node represents a common prefix of some strings.
+    - **Use Cases**: Efficiently performing prefix searches, autocomplete features, and dictionary implementations.
+
+22. **Queue**
+    - **Description**: A collection designed for holding elements prior to processing. Implementations include LinkedList, PriorityQueue, etc.
+    - **Use Cases**: Implementing a queue where elements are processed in a FIFO order.
+
+### Summary
+This list provides an overview of commonly used data structures in Java, their typical use cases, and their suitability for various tasks. The ordering reflects general usage patterns, but actual usage may vary based on specific application needs.

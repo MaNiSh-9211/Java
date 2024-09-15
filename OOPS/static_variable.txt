@@ -1,0 +1,79 @@
+It is not compulsory to use static with final in Java. However, using static with final is common in certain contexts because
+ it offers specific advantages. Here's a detailed explanation:
+
+When static is Not Required with final A final variable can exist without being static. This is useful when the constant value 
+is instance-specific, 
+meaning each object of the class might have its own unique constant.
+
+public class Example {
+    public final int CONSTANT;
+
+    public Example(int value) {
+        this.CONSTANT = value;
+    }
+
+    public static void main(String[] args) {
+        Example example1 = new Example(10);
+        System.out.println("CONSTANT: " + example1.CONSTANT);
+        
+         Example example2 = new Example(20);
+        System.out.println("CONSTANT: " + example2.CONSTANT);
+        // Output: CONSTANT: 10
+    }
+}
+
+
+
+it is not compulsory to initialize it at the time of declaration.
+
+3 main ways of initilizing the static variables
+
+1 direct initilization while declaration;
+
+2 using static block
+
+static block have hogh priority even then initializitio block
+
+3 using constructor , not recomended
+
+but the static block exixute after the datamamber declaration and initilization if doen while declaring 
+so in case of both present the static block exicute after and have its value on variable
+
+
+
+
+
+class A
+{
+   static String s = "*";
+   A() 
+   {
+              System.out.println("class a");
+       s += "Code";
+   }
+}
+public class B extends A
+{
+   B() 
+   {
+       this(5);
+       s += "Quotient*";
+              System.out.println("Normal b");
+   }
+   B(int x) 
+   {
+       s += " ";
+   }
+   public static void main(String[] args) 
+   {
+              System.out.println("COntroll comes hare");
+       System.out.println("Name " + s);
+       System.out.println("Name " + s);
+   }
+   static
+   {
+       new B();
+              System.out.println("new B static ");
+       System.out.println("Name " + s);
+   }
+}

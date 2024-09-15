@@ -1,0 +1,231 @@
+
+0 in case of function overriding the return type must be same
+
+00 parent class protecte dis private in child class
+
+00 add in set return true and false and offer in queue
+
+0000 char: The default value of char is the null character (\u0000), which is essentially a character with a numeric value of zero.
+
+String: The default value of String (and any other object reference) is null.
+
+1 if we want to find percentag eof any number then we can multiply the number with 0.10 for 10 percent and 0.20 for 25 percent e.g 100*0.10=10
+if our values is in double and want to assign them into int the do (int);
+    int percentage=(int)Math.floor(aggrigate/500*100);
+
+2 for converting a integer number like 12345 to array of integers 
+
+step 1           String numStr = Integer.toString(number);
+
+step 2         int[] digits = new int[numStr.length()];
+
+step 3 for (int i = 0; i < numStr.length(); i++) {
+            digits[i] = numStr.charAt(i) - '0';
+        }
+
+        hare -'0' is compulsary
+
+
+or we can use %10 and then put that in array but hare we cant find the length of array so this will not work
+
+
+3  only one condition in leap year(if(year%4==0**year%100==0)||(year%400==0))
+then leap year either not
+
+
+4 prime number starts with 2;
+
+5       while(t-->0){
+this is equal to t--;
+
+
+
+6  return Integer.bitCount(num);  set bit
+
+
+7 in bitCount the Integer. or Long . depends on the argument type of the function
+
+8      A r; // obtain a reference of type A
+
+   A a = new A(); // object of type A
+    B b = new B(); // object of type B
+    C c = new C(); // object of type C
+    A r; // obtain a reference of type A
+    r = a; // r refers to an A object
+    r.callme(); // calls A's version of callme
+    r = b; // r refers to a B object
+    r.callme(); // calls B's version of callme
+    r = c; // r refers to a C object
+    r.callme(); // calls C's version of callme
+
+
+
+
+r is of type B. It can only refer to instances of type B or its subclasses, not instances of other types that do not share the same type hierarchy.
+
+
+
+below code runs perfectly 
+
+
+class C extends B{
+  // override callme()
+  void callme() {
+    System.out.println("CodeQuotient - C");
+  }
+}
+
+public class Main {
+  public static void main(String args[]) {
+    A a = new A(); // object of type A
+    B b = new B(); // object of type B
+    C c = new C(); // object of type C
+    B r; // obtain a reference of type A
+   // r = a; // r refers to an A object
+   // r.callme(); // calls A's version of callme
+    r = b; // r refers to a B object
+    r.callme(); // calls B's version of callme
+    r = c; // r refers to a C object
+    r.callme(); // calls C's version of callme
+  }
+}
+
+
+
+we can create refrence variables by A r hare r is a refrence variable of class a and we can assign the object of a and its subclasses to 
+the refrence variable r , but we cannot assign and call the function by refrence variable in 2 cases
+1 if the classes object that we are trying to assign is not a subclass or same class of the class of which type we created the refrence variable 
+
+2 the class which is not of same hirerichy ,, this is equal to 1st almost
+
+
+
+left must be parent or same class
+
+
+9// main...................
+
+
+if the refrence variable is of object type and we assign a object of any class in it then we can only call the function of object
+class the function of object assigned to refrence variable we cannot acess them; it wil give error
+Object var5 = new Box();
+
+but if we can cast the var 5 which is of box type assigned to object to any (applies above same rule) 
+Object var5 = new Box();
+((Pill) var5).method3();
+this will give error only if the method 3 is not in the pill clas or its parent
+
+
+why calling a function of box3 class by using var5.fun() is giving error
+ChatGPT said:
+ChatGPT
+In Java, when you assign an object to a reference of type Object, you lose access to the methods specific to the object's actual
+ class unless you cast it back to the specific class type. Here's a detailed explanation of why calling a method from the Box class using a reference of type Object may give an error:
+
+Explanation
+Reference Type:
+
+In your case, var5 is of type Object. The Object class is the root class of all Java classes, and it provides a set of methods that 
+are common to all objects, such as toString(), equals(), and hashCode().
+Any reference of type Object can point to an instance of any class, but you can only call methods defined in the Object class
+ directly on it.
+Method Access:
+
+If Box is a class with its own specific methods, such as fun(), you cannot directly call fun() on var5 if its declared type is
+ Object. The compiler does not know about fun() because Object does not have a fun() method.
+
+
+
+
+
+
+MCQ 1:
+Which of the following import statements correctly imports all classes from the com.example package into another class?
+
+import com.example;
+import com.example.*;
+import * from com.example;
+include com.example.*;
+Answer:
+2. import com.example.*;
+
+
+
+
+
+MCQ 2:
+Given two packages: com.animal and com.main. How can you access the class Dog defined in com.animal from a class in com.main?
+
+You can access Dog without any import statements since both packages are part of the same project.
+Use the fully qualified name com.animal.Dog in the com.main package.
+Declare package com.animal; inside the class file of com.main.
+Import the Dog class using import com.animal.Dog;.
+Answer:
+4. Import the Dog class using import com.animal.Dog;.
+
+
+
+Example: Using Fully Qualified Name Instead of import Statement
+Package com.example.animals:
+
+java
+Copy code
+package com.example.animals;
+
+public class Dog {
+    public void bark() {
+        System.out.println("Woof!");
+    }
+}
+Package com.example.main:
+
+java
+Copy code
+package com.example.main;
+
+public class Main {
+    public static void main(String[] args) {
+        // Using fully qualified name to create an object of Dog
+        com.example.animals.Dog dog = new com.example.animals.Dog();
+        dog.bark();
+    }
+
+
+
+
+MCQ 2:
+Consider the following Java packages:
+
+Package com.library:
+
+java
+Copy code
+public class Book {
+    public String title = "Java Programming";
+}
+Package com.main:
+
+java
+Copy code
+import com.library.Book;
+public class Main {
+    public static void main(String[] args) {
+        Book book = new Book();
+        System.out.println(book.title);
+    }
+}
+
+// generic methods <T>
+
+
+public <T> T identity(T value) {
+        return value;
+    }
+
+    everything is normal like th egeneric class functions except the <T> in the begning after acess specifier in class this is before{
+
+        Characters in Java (and other programming languages) are internally represented by numeric values according to the ASCII (or Unicode) standard. For example:
+'0' has an ASCII value of 48.
+'1' has an ASCII value of 49.
+'2' has an ASCII value of 50, and so on.
+If you directly use numStr.charAt(i) (which retrieves a character from the string), it will return a character representing the digit, not the numeric value. To convert it to an actual integer, you need to subtract '0' (which is 48 in ASCII) from the character to get the correct integer value.

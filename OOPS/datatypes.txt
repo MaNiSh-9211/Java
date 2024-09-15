@@ -1,0 +1,53 @@
+Primitive Data Types in Java
+byte
+
+Size: 8-bit
+Range: -128 to 127
+short
+
+Size: 16-bit
+Range: -32,768 to 32,767
+int
+
+Size: 32-bit
+Range: -2^31 to 2^31-1
+long
+
+Size: 64-bit
+Range: -2^63 to 2^63-1
+float
+
+Size: 32-bit
+Single-precision floating point
+double
+
+Size: 64-bit
+Double-precision floating point
+char
+
+Size: 16-bit
+Range: 0 to 65,535 (Unicode characters)
+boolean
+
+Values: true or false
+Non-Primitive Data Types in Java
+String
+
+Represents a sequence of characters
+Arrays
+
+A collection of similar types of elements
+Classes
+
+Templates for creating objects
+Interfaces
+
+Abstract types that specify methods that must be implemented by classes
+Enums
+
+Special types used to define collections of constants
+Collections Framework
+
+Includes classes like ArrayList, LinkedList, HashSet, HashMap, etc.
+Non-primitive data types (also called reference types) store references to the actual data.
+ They can be used to call methods to perform certain operations, while primitive data types do not have such capabilities.

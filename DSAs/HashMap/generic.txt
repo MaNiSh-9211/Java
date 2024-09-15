@@ -1,0 +1,52 @@
+why <> is used while creting map
+ChatGPT
+The angle brackets <> are used in Java to define generics, which enable you to specify the types of objects that a class or 
+interface can work with. When creating a Map, you use generics to define the types of keys and values it will hold.
+
+Example
+java
+Copy code
+Map<String, Integer> map = new HashMap<>();
+In this example:
+
+String is the type of the keys.
+Integer is the type of the values.
+Benefits of Using Generics
+Type Safety: Generics ensure that you can only insert values of the specified type into the map. If you try to put a value of a
+ different type, you will get a compile-time error. This helps to prevent ClassCastException at runtime.
+
+java
+Copy code
+map.put("One", 1);      // Valid
+// map.put(1, "One");   // Compile-time error
+Elimination of Casting: When retrieving values from a map defined with generics, you don't need to cast them to the specified type 
+since the type is known.
+
+java
+Copy code
+Integer value = map.get("One"); // No casting needed
+Code Clarity: Generics make the code more readable by clearly indicating what types are expected in the collection.
+ This improves maintainability.
+
+Type Parameters
+You can also create a map with custom types or use generic types. For example:
+
+java
+Copy code
+class CustomClass {
+    // Custom properties
+}
+
+Map<CustomClass, String> customMap = new HashMap<>();
+Wildcards
+Java generics also support wildcards, which allow you to define a type parameter that can accept any type or a subtype of a 
+specified type. For example, using ? allows for more flexible method parameters:
+
+java
+Copy code
+public void processMap(Map<?, ?> map) {
+    // Can accept any type of Map
+}
+Summary
+Using <> when creating a Map is essential for defining the types of keys and values, ensuring type safety, eliminating the need
+ for casting, and improving code clarity. It is a core feature of Java's generics system, making collections more powerful and easier to use.

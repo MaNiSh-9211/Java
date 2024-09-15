@@ -1,0 +1,151 @@
+### Java String Methods
+
+1. **`charAt(int index)`**
+   - **Input**: `"Hello", 1`
+   - **Function**: Returns the character at the specified index.
+   - **Output**: `'e'`
+
+2. **`compareTo(String anotherString)`**
+   - **Input**: `"apple", "banana"`
+   - **Function**: Compares two strings lexicographically.
+   - **Output**: `-1` (because "apple" is less than "banana")
+
+3. **`compareToIgnoreCase(String anotherString)`**
+   - **Input**: `"apple", "BANANA"`
+   - **Function**: Compares two strings lexicographically, ignoring case.
+   - **Output**: `-1` (because "apple" is less than "banana")
+
+4. **`concat(String str)`**
+   - **Input**: `"Hello", " World"`
+   - **Function**: Concatenates the specified string to the end of the current string.
+   - **Output**: `"Hello World"`
+
+5. **`contains(CharSequence sequence)`**
+   - **Input**: `"Hello World", "lo"`
+   - **Function**: Checks if the string contains the specified sequence.
+   - **Output**: `true`
+
+6. **`endsWith(String suffix)`**
+   - **Input**: `"Hello World", "World"`
+   - **Function**: Tests if the string ends with the specified suffix.
+   - **Output**: `true`
+
+7. **`equals(Object anObject)`**
+   - **Input**: `"Hello", "Hello"`
+   - **Function**: Compares this string to the specified object.
+   - **Output**: `true`
+
+8. **`equalsIgnoreCase(String anotherString)`**
+   - **Input**: `"Hello", "hello"`
+   - **Function**: Compares this string to another string, ignoring case.
+   - **Output**: `true`
+
+9. **`format(String format, Object... args)`**
+   - **Input**: `"Hello %s", "World"`
+   - **Function**: Returns a formatted string using the specified format string and arguments.
+   - **Output**: `"Hello World"`
+
+10. **`indexOf(int ch)`**
+    - **Input**: `"Hello", 'o'`
+    - **Function**: Returns the index of the first occurrence of the specified character.
+    - **Output**: `4`
+
+11. **`indexOf(String str)`**
+    - **Input**: `"Hello World", "World"`
+    - **Function**: Returns the index of the first occurrence of the specified substring.
+    - **Output**: `6`
+
+12. **`lastIndexOf(int ch)`**
+    - **Input**: `"Hello World", 'o'`
+    - **Function**: Returns the index of the last occurrence of the specified character.
+    - **Output**: `7`
+
+13. **`lastIndexOf(String str)`**
+    - **Input**: `"Hello World", "World"`
+    - **Function**: Returns the index of the last occurrence of the specified substring.
+    - **Output**: `6`
+
+14. **`length()`**
+    - **Input**: `"Hello"`
+    - **Function**: Returns the length of the string.
+    - **Output**: `5`
+
+15. **`replace(char oldChar, char newChar)`**
+    - **Input**: `"Hello", 'l', 'x'`
+    - **Function**: Replaces all occurrences of the specified character with a new character.
+    - **Output**: `"Hexxo"`
+
+16. **`replace(CharSequence target, CharSequence replacement)`**
+    - **Input**: `"Hello World", "World", "Java"`
+    - **Function**: Replaces all occurrences of the specified sequence with a new sequence.
+    - **Output**: `"Hello Java"`
+
+17. **`split(String regex)`**
+    - **Input**: `"Hello World", " "`
+    - **Function**: Splits the string around matches of the given regular expression.
+    - **Output**: `["Hello", "World"]`
+
+18. **`startsWith(String prefix)`**
+    - **Input**: `"Hello World", "Hello"`
+    - **Function**: Tests if the string starts with the specified prefix.
+    - **Output**: `true`
+
+19. **`substring(int beginIndex)`**
+    - **Input**: `"Hello World", 6`
+    - **Function**: Returns a substring from the specified index to the end of the string.
+    - **Output**: `"World"`
+
+20. **`substring(int beginIndex, int endIndex)`**
+    - **Input**: `"Hello World", 0, 5`
+    - **Function**: Returns a substring from the specified begin index to the end index.
+    - **Output**: `"Hello"`
+
+21. **`toLowerCase()`**
+    - **Input**: `"Hello World"`
+    - **Function**: Converts all characters in the string to lowercase.
+    - **Output**: `"hello world"`
+
+22. **`toUpperCase()`**
+    - **Input**: `"Hello World"`
+    - **Function**: Converts all characters in the string to uppercase.
+    - **Output**: `"HELLO WORLD"`
+
+23. **`trim()`**
+    - **Input**: `"   Hello World   "`
+    - **Function**: Removes whitespace from both ends of the string.
+    - **Output**: `"Hello World"`
+
+24. **`valueOf(boolean b)`**
+    - **Input**: `true`
+    - **Function**: Returns the string representation of the specified boolean.
+    - **Output**: `"true"`
+
+25. **`valueOf(char c)`**
+    - **Input**: `'A'`
+    - **Function**: Returns the string representation of the specified character.
+    - **Output**: `"A"`
+
+26. **`valueOf(int i)`**
+    - **Input**: `123`
+    - **Function**: Returns the string representation of the specified integer.
+    - **Output**: `"123"`
+
+27. **`valueOf(long l)`**
+    - **Input**: `123456789L`
+    - **Function**: Returns the string representation of the specified long.
+    - **Output**: `"123456789"`
+
+28. **`valueOf(float f)`**
+    - **Input**: `12.34f`
+    - **Function**: Returns the string representation of the specified float.
+    - **Output**: `"12.34"`
+
+29. **`valueOf(double d)`**
+    - **Input**: `12.3456789`
+    - **Function**: Returns the string representation of the specified double.
+    - **Output**: `"12.3456789"`
+
+30. **`valueOf(Object obj)`**
+    - **Input**: `123`
+    - **Function**: Returns the string representation of the specified object.
+    - **Output**: `"123"`

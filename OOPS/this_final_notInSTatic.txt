@@ -1,0 +1,94 @@
+if we create the object of the child class and the parent class dont have any 
+
+
+super keyword and this keyword can not be used in a static method.
+why
+ChatGPT
+In Java, the super and this keywords are used to refer to instances of classes and their members. However, they cannot be used in static methods. Here's why:
+
+Understanding this and super
+this Keyword:
+
+Refers to the current instance of the class.
+Can be used to access instance variables and methods.
+Can be used to call another constructor in the same class.
+super Keyword:
+
+Refers to the superclass (parent class) instance.
+Can be used to access superclass methods and variables.
+Can be used to call a constructor from the superclass.
+Why this and super Cannot Be Used in Static Methods
+Static Methods:
+
+Static methods belong to the class itself, not to any particular instance of the class.
+They can be called without creating an instance of the class.
+Static methods can only directly access other static members (variables and methods) of the class.
+Instance Context:
+
+this and super are inherently related to an instance context.
+this refers to the current object (instance of the class), and super refers to the instance's superclass.
+No Instance Context in Static Methods:
+
+Since static methods are not associated with any specific instance of the class, there is no "current object" for this to refer to.
+Similarly, there is no instance of the superclass to refer to with super.
+Examples
+Using this in an Instance Method:
+java
+Copy code
+public class Example {
+    private int value;
+
+    public Example(int value) {
+        this.value = value; // 'this' refers to the current instance
+    }
+
+    public void printValue() {
+        System.out.println(this.value); // 'this' refers to the current instance
+    }
+}
+Using super in an Instance Method:
+java
+Copy code
+public class Base {
+    public void display() {
+        System.out.println("Base class display method");
+    }
+}
+
+public class Derived extends Base {
+    public void display() {
+        super.display(); // 'super' refers to the superclass's instance
+        System.out.println("Derived class display method");
+    }
+}
+Static Method Example:
+java
+Copy code
+public class Example {
+    private int value;
+    private static int staticValue;
+
+    public Example(int value) {
+        this.value = value;
+    }
+
+    public static void staticMethod() {
+        // System.out.println(this.value); // Error: 'this' cannot be used in a static context
+        // super.display(); // Error: 'super' cannot be used in a static context
+
+        System.out.println(staticValue); // Accessing static variable is allowed
+    }
+}
+Summary
+this: Refers to the current instance of the class and is used within instance methods or constructors to refer to the calling object.
+super: Refers to the superclass instance and is used within instance methods or constructors to refer to the calling object's superclass.
+Static methods do not operate on instances, so they do not have access to instance-specific data (this) or superclass instance data (super). Thus, this and super cannot be used in a static method.
+
+
+
+
+
+Yes, when you create an object of a derived (child) class, the constructor of the parent class will be called implicitly. 
+This is due to the way inheritance works in Java. When a child class constructor is called, it implicitly calls the default (no-argument) 
+constructor of the parent class before executing its own body. If the parent class does not have a 
+default constructor, you need to explicitly call one of the parent class's constructors using super() with appropriate arguments.

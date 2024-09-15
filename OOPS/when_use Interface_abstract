@@ -1,0 +1,19 @@
+Interfaces
+Use Case: Multiple Inheritance and Contract-Based Design
+abstraction can be used in a hirerchy means there is a relation between the parent abstract class and a child abstract class 
+so the abstraction is ise used in classes that have relation as they also have concrete methods.
+ but the interfaces there is no relation as any class can use the interfaces there is no need of the class to be class of any parent abstract class
+
+ and interface is not a class
+
+ it is a set of functionality(contract)
+
+it is not necessary to have relation between two classses using interface
+
+but in abstraction there is a relationship between child classes
+and as there exist concrete function 
+
+Normal Inheritance & Overriding: Use when classes share common behavior that can be inherited and when specific behavior needs to be modified.
+Abstract Classes: Use when you have a base class that provides some shared implementation but also has methods that must be implemented by subclasses. It’s suitable for situations where you want to provide some common code across related classes but still enforce certain methods to be implemented.
+Interfaces: Use when you need to define a contract that can be implemented by any class, regardless of its position in the class hierarchy. It’s ideal for defining capabilities or behaviors that might be shared across completely unrelated classes.
+

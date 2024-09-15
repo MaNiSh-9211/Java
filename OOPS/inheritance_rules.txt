@@ -1,0 +1,101 @@
+Basic Rules of Java Inheritance
+Single Inheritance:
+
+Java supports single inheritance, meaning a class can inherit from only one superclass directly.
+Syntax: class SubClass extends SuperClass
+Multiple Levels of Inheritance:
+
+A class can be part of a multilevel inheritance hierarchy where a class inherits from another class, which in turn inherits from another class.
+Object Class:
+
+All classes in Java implicitly extend the Object class if no other superclass is specified.
+The Object class is the root of the class hierarchy.
+Access Control
+public Members:
+
+Public members of the superclass are accessible in the subclass.
+protected Members:
+
+Protected members are accessible in the subclass and in other classes in the same package.
+Default (Package-Private) Members:
+
+Members with no access modifier (default) are accessible in the subclass only if the subclass is in the same package as the superclass.
+private Members:
+
+Private members of the superclass are not accessible directly in the subclass.
+Method Overriding
+Overriding Methods:
+
+A subclass can provide a specific implementation for a method that is already defined in its superclass.
+The method in the subclass must have the same name, return type, and parameter list as the method in the superclass.
+Use the @Override annotation to indicate that a method is being overridden.
+Access Level in Overriding:
+
+The access level of an overridden method cannot be more restrictive than the method in the superclass.
+For example, if a superclass method is public, the overriding method in the subclass cannot be protected or private.
+Covariant Return Type:
+
+An overriding method can have a return type that is a subtype of the return type of the overridden method.
+Constructors
+Constructor Inheritance:
+
+Constructors are not inherited.
+The subclass constructor must explicitly call one of the superclass constructors using super().
+Default Constructor:
+
+If a class does not define any constructor, the compiler automatically provides a default no-argument constructor.
+If a superclass does not have a no-argument constructor, the subclass must explicitly call a superclass constructor using super().
+final Keyword
+final Class:
+
+A class declared as final cannot be subclassed.
+Example: public final class FinalClass { ... }
+final Methods:
+
+A method declared as final cannot be overridden by subclasses.
+Example: public final void finalMethod() { ... }
+Abstract Classes and Methods
+Abstract Class:
+
+An abstract class cannot be instantiated directly.
+It can have abstract methods (methods without a body) that must be implemented by subclasses.
+Example: public abstract class AbstractClass { public abstract void abstractMethod(); }
+Abstract Methods:
+
+Subclasses of an abstract class must either implement all abstract methods or be declared as abstract themselves.
+Interface Implementation
+Multiple Interfaces:
+
+A class can implement multiple interfaces.
+Syntax: class MyClass implements Interface1, Interface2
+Interface Methods:
+
+A class that implements an interface must provide implementations for all of the interface's methods.
+Inheritance and Polymorphism
+Polymorphism:
+
+A subclass object can be assigned to a superclass reference variable.
+Example: SuperClass obj = new SubClass();
+instanceof Operator:
+
+The instanceof operator is used to test whether an object is an instance of a specific class or interface.
+Static Members
+Static Methods:
+
+Static methods are not overridden, but hidden if redefined in a subclass.
+Accessed through the class name rather than an instance.
+Static Variables:
+
+Static variables are shared among all instances of the class.
+Final Considerations
+super Keyword:
+
+The super keyword is used to refer to the immediate superclass instance.
+It can be used to call superclass methods and constructors.
+Object Class Methods:
+
+Methods from the Object class (e.g., toString(), equals(), hashCode()) can be overridden in subclasses.
+Composition over Inheritance:
+
+Prefer composition over inheritance when appropriate, to avoid complex and tightly coupled class hierarchies.
+These rules provide a comprehensive overview of how inheritance works in Java and the guidelines for using it effectively in your code.
